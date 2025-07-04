@@ -7,13 +7,16 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "ext-fileinfo": "*",
+        "ext-openssl": "*",
         "intervention/image": "^3.11",
         "intervention/image-laravel": "^1.5",
         "laravel/framework": "^12.0",
         "laravel/socialite": "^5.21",
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "^4.6",
-        "unisharp/laravel-filemanager": "^2.10",
         "yajra/laravel-datatables": "12.0"
     },
     "require-dev": {
