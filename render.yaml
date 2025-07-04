@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: projek-study
+    env: php
+    plan: free
+    buildCommand: |
+      apt-get update
+      apt-get install -y curl gnupg
+      curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+      apt-get install -y nodejs
+      npm install
+      npm run build
+      composer install --no-dev --optimize-autoloader
+      php artisan key:generate
+      php artisan migrate --force
+      php artisan config:cache
+    startCommand: php artisan serve --host 0.0.0.0 --port $PORT
