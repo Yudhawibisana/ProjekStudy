@@ -5,7 +5,7 @@ services:
     plan: free
     buildCommand: |
       cp .env.example .env
-      composer install --no-dev --optimize-autoloader --no-scripts --ignore-platform-reqs
+      composer install --no-dev --optimize-autoloader
       php artisan key:generate
       php artisan migrate --force
       php artisan config:cache
